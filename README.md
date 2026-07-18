@@ -22,6 +22,8 @@ This is a source-review service, not a security certification, penetration test,
    0xf88990ca1dDF070dD74b6a7a3F2277863ACC23C8
    ```
 
+   Wallets that support payment links can use this [pre-filled Base USDC transfer](ethereum:0x833589fCD6EDb6E08f4c7C32D4f71b54bda02913@8453/transfer?address=0xf88990ca1dDF070dD74b6a7a3F2277863ACC23C8&uint256=250000). Confirm the recipient, network, and amount in the wallet before signing.
+
 3. Add the Base transaction hash to the request.
 
 The service verifies the USDC `Transfer` event on Base before fulfillment. Each payment transaction can fund one request only. Fulfillment is posted as a comment on the issue, normally within 24 hours.
