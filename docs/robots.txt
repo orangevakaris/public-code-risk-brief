@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://orangevakaris.github.io/public-code-risk-brief/sitemap.xml
