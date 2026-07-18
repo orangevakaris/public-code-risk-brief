@@ -13,7 +13,7 @@ This is a source-review service, not a security certification, penetration test,
 
 ## Request a brief
 
-1. Open a [new request](../../issues/new?template=paid-risk-brief.yml).
+1. Open a [new request](https://github.com/orangevakaris/public-code-risk-brief/issues/new?template=paid-risk-brief.yml).
 2. Send **at least 0.25 USDC on Base** to:
 
    ```text
