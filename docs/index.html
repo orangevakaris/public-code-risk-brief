@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A pay-per-request source risk brief for public GitHub repositories, settled in Base USDC.">
+    <title>Public Code Risk Brief</title>
+    <style>
+      :root {
+        --ink: #18221c;
+        --paper: #f5f0e4;
+        --acid: #d6ff4b;
+        --signal: #e95e2f;
+        --line: #2d3c32;
+        --muted: #657167;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        background:
+          radial-gradient(circle at 8% 0%, rgba(214, 255, 75, 0.46), transparent 20rem),
+          linear-gradient(120deg, #efe6d4 0%, var(--paper) 46%, #dce6d5 100%);
+        color: var(--ink);
+        font-family: Georgia, "Times New Roman", serif;
+        margin: 0;
+        min-height: 100vh;
+      }
+
+      main { max-width: 1080px; margin: 0 auto; padding: 28px 20px 64px; }
+
+      .masthead {
+        align-items: center;
+        border-bottom: 2px solid var(--ink);
+        display: flex;
+        font-family: "Courier New", monospace;
+        font-size: 12px;
+        justify-content: space-between;
+        letter-spacing: 0.08em;
+        padding-bottom: 14px;
+        text-transform: uppercase;
+      }
+
+      .dot { color: var(--signal); font-size: 17px; }
+
+      .hero {
+        display: grid;
+        gap: 30px;
+        grid-template-columns: minmax(0, 1.7fr) minmax(250px, 0.8fr);
+        padding: 70px 0 52px;
+      }
+
+      h1 {
+        font-size: clamp(3.4rem, 9vw, 7.4rem);
+        font-weight: 400;
+        letter-spacing: -0.08em;
+        line-height: 0.78;
+        margin: 0;
+        max-width: 850px;
+      }
+
+      h1 em { color: var(--signal); font-style: normal; }
+
+      .hero-copy {
+        align-self: end;
+        border-left: 2px solid var(--ink);
+        font-size: 1.3rem;
+        line-height: 1.35;
+        margin: 0;
+        padding: 0 0 0 18px;
+      }
+
+      .signal-card {
+        align-self: end;
+        background: var(--ink);
+        color: var(--paper);
+        padding: 24px;
+      }
+
+      .signal-card strong { color: var(--acid); display: block; font-family: "Courier New", monospace; font-size: 2.4rem; margin: 7px 0; }
+      .signal-card small { color: #b9c5b9; font-family: "Courier New", monospace; line-height: 1.5; }
+
+      .action {
+        align-items: center;
+        background: var(--signal);
+        color: white;
+        display: inline-flex;
+        font-family: "Courier New", monospace;
+        font-size: 15px;
+        font-weight: 700;
+        gap: 20px;
+        letter-spacing: 0.04em;
+        margin-bottom: 58px;
+        padding: 17px 20px;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: transform 160ms ease, box-shadow 160ms ease;
+      }
+
+      .action:hover { box-shadow: 7px 7px 0 var(--ink); transform: translate(-3px, -3px); }
+
+      .grid { border-top: 2px solid var(--ink); display: grid; grid-template-columns: repeat(3, 1fr); }
+      .panel { border-bottom: 1px solid var(--line); min-height: 280px; padding: 24px 22px 30px; }
+      .panel + .panel { border-left: 1px solid var(--line); }
+
+      .eyebrow { color: var(--muted); font-family: "Courier New", monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; }
+      h2 { font-size: 1.8rem; font-weight: 400; line-height: 1; margin: 24px 0 18px; }
+      p, li { font-size: 1.03rem; line-height: 1.45; }
+      ul { margin: 0; padding-left: 19px; }
+
+      .steps { border: 2px solid var(--ink); margin-top: 48px; }
+      .steps-header { background: var(--acid); border-bottom: 2px solid var(--ink); font-family: "Courier New", monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; padding: 13px 16px; text-transform: uppercase; }
+      .step { align-items: start; display: grid; gap: 18px; grid-template-columns: 54px 1fr; padding: 22px 18px; }
+      .step + .step { border-top: 1px solid var(--line); }
+      .number { color: var(--signal); font-family: "Courier New", monospace; font-size: 1.8rem; font-weight: 700; }
+      .step p { margin: 0; }
+
+      code {
+        background: rgba(24, 34, 28, 0.1);
+        display: inline-block;
+        font-family: "Courier New", monospace;
+        font-size: 0.78rem;
+        overflow-wrap: anywhere;
+        padding: 3px 5px;
+      }
+
+      footer { color: var(--muted); font-family: "Courier New", monospace; font-size: 11px; line-height: 1.6; padding-top: 34px; }
+      footer a { color: var(--ink); }
+
+      @media (max-width: 720px) {
+        .hero, .grid { grid-template-columns: 1fr; }
+        .hero { padding-top: 48px; }
+        .panel + .panel { border-left: 0; border-top: 1px solid var(--line); }
+        .panel { min-height: auto; }
+        .masthead { align-items: flex-start; gap: 10px; flex-direction: column; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header class="masthead">
+        <span>Public Code Risk Brief <span class="dot">*</span></span>
+        <span>Public source only / Base USDC</span>
+      </header>
+
+      <section class="hero">
+        <div>
+          <h1>Public code.<br><em>Sharper</em><br>questions.</h1>
+        </div>
+        <div>
+          <p class="hero-copy">A concise source-based risk brief for a public GitHub repository. Built for deciding where to investigate next, not for claiming a security certification.</p>
+          <aside class="signal-card">
+            <small>REQUEST PRICE</small>
+            <strong>0.25 USDC</strong>
+            <small>Base mainnet<br>Public GitHub delivery</small>
+          </aside>
+        </div>
+      </section>
+
+      <a class="action" href="https://github.com/orangevakaris/public-code-risk-brief/issues/new?template=paid-risk-brief.yml">Request a brief <span>-></span></a>
+
+      <section class="grid">
+        <article class="panel">
+          <div class="eyebrow">01 / output</div>
+          <h2>Useful before the deep dive.</h2>
+          <ul>
+            <li>Architecture and trust boundaries</li>
+            <li>High-risk implementation paths</li>
+            <li>Visible dependency, CI, and configuration concerns</li>
+            <li>Prioritized remediation questions</li>
+          </ul>
+        </article>
+        <article class="panel">
+          <div class="eyebrow">02 / settlement</div>
+          <h2>Payment is checked on-chain.</h2>
+          <p>A successful native-USDC <code>Transfer</code> event on Base must send at least <code>0.25 USDC</code> to the designated address. Transaction hashes cannot fund more than one request.</p>
+        </article>
+        <article class="panel">
+          <div class="eyebrow">03 / boundary</div>
+          <h2>No secrets. No execution. No probes.</h2>
+          <p>Only public repositories are reviewed. The service does not run repository code, access private systems, or test deployed targets. Delivery is a public GitHub issue comment.</p>
+        </article>
+      </section>
+
+      <section class="steps">
+        <div class="steps-header">Three steps / public-material workflow</div>
+        <div class="step"><div class="number">01</div><p>Open the request form with a public GitHub repository URL and optional commit or branch.</p></div>
+        <div class="step"><div class="number">02</div><p>Send at least <strong>0.25 native USDC on Base</strong> to <code>0xf88990ca1dDF070dD74b6a7a3F2277863ACC23C8</code>, then provide the transaction hash.</p></div>
+        <div class="step"><div class="number">03</div><p>After confirmation, the brief is delivered on the request issue. Expect a concise, evidence-linked review rather than a generic score.</p></div>
+      </section>
+
+      <footer>
+        Public source review only. Not a penetration test, audit certification, or guarantee of security.<br>
+        <a href="https://github.com/orangevakaris/public-code-risk-brief">Read the operating terms and source repository.</a>
+      </footer>
+    </main>
+  </body>
+</html>
