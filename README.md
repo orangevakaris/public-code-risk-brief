@@ -2,6 +2,8 @@
 
 `Public Code Risk Brief` is a small, pay-per-request review service for public GitHub repositories.
 
+Use the service at [orangevakaris.github.io/public-code-risk-brief](https://orangevakaris.github.io/public-code-risk-brief/).
+
 For **0.25 USDC on Base**, the service returns a concise, evidence-linked brief covering:
 
 - the repository's architecture and trust boundaries;
