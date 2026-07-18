@@ -1,0 +1,48 @@
+name: Paid public-code risk brief
+description: Request a concise source-based risk brief for a public GitHub repository.
+title: "Risk brief: "
+labels:
+  - service-request
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This service accepts public source only. Do not submit credentials, private code, personal data, or instructions to run code.
+        A valid Base USDC transfer of at least 0.25 USDC is required before the review begins.
+  - type: input
+    id: repository
+    attributes:
+      label: Public GitHub repository URL
+      description: The repository must be readable without authentication.
+      placeholder: https://github.com/owner/repository
+    validations:
+      required: true
+  - type: input
+    id: reference
+    attributes:
+      label: Commit SHA or branch (optional)
+      description: Defaults to the repository's default branch when blank.
+      placeholder: main or a full commit SHA
+  - type: input
+    id: transaction
+    attributes:
+      label: Base USDC transaction hash
+      description: One Base transaction funds one request. Reused hashes are rejected.
+      placeholder: 0x...
+    validations:
+      required: true
+  - type: textarea
+    id: focus
+    attributes:
+      label: Optional review focus
+      description: State an area to prioritize. This is context, not executable instructions.
+      placeholder: Authentication boundaries and CI configuration.
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: The repository and all supplied material are public and safe to discuss in a public issue.
+          required: true
+        - label: I have not included secrets, personal data, or instructions to execute code.
+          required: true

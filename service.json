@@ -1,0 +1,13 @@
+{
+  "name": "Public Code Risk Brief",
+  "price": {
+    "amount": "0.25",
+    "asset": "USDC",
+    "network": "Base",
+    "chainId": 8453,
+    "contract": "0x833589fCD6EDb6E08f4c7C32D4f71b54bda02913"
+  },
+  "recipient": "0xf88990ca1dDF070dD74b6a7a3F2277863ACC23C8",
+  "delivery": "Public GitHub issue comment after on-chain payment verification.",
+  "scope": "Public GitHub source only; no live-target testing or code execution."
+}
